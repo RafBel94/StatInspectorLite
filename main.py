@@ -1,4 +1,6 @@
 import connection
+import time
+import logwriting
 
 collection = connection.getDatabaseWithCollection()
 
@@ -9,4 +11,6 @@ def insertData(name, age, city):
     else:
         collection.insert_one({"name": name, "age": age, "city": city})
         
-insertData("Pablo", 99, "Pontevedra")
+while True:
+    logwriting.write_log()
+    time.sleep(2)
