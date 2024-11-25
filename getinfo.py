@@ -1,7 +1,6 @@
 import socket
 import psutil
 import pynvml
-
 def get_ip():
     hostname = socket.gethostname()
     return socket.gethostbyname(hostname)

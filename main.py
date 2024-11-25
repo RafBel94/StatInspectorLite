@@ -1,16 +1,11 @@
 import connection
 import time
 import logwriting
+import databasewriting
 
 collection = connection.getDatabaseWithCollection()
 
-def insertData(name, age, city):
-    
-    if collection.count_documents({}) >= 5000:
-        print("Database is full, please erase some data")
-    else:
-        collection.insert_one({"name": name, "age": age, "city": city})
-        
 while True:
     logwriting.write_log()
+    databasewriting.write_to_database()
     time.sleep(2)

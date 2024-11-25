@@ -8,10 +8,10 @@ def getDatabaseWithCollection():
     
     collection = client['StatInspectorLite']['st_inspector']
     
-    return collection;
+    return collection
 
 # This is added so many files can reuse the function get_database()
 if __name__ == "__main__":   
-  
-   # Get the database
-   dbname = getDatabaseWithCollection()
+    
+# Get the database
+    dbname = getDatabaseWithCollection()
