@@ -9,7 +9,7 @@ MAX_ENTRIES = 5000
 def write_to_database():
     timestamp = datetime.datetime.now().strftime("%d/%m/%Y - %H:%M:%S")
     
-    cpu_usage = gpu_temp = memory_usage = ip_address = running_tasks = None
+    cpu_usage = gpu_temp = cpu_temp = memory_usage = ip_address = running_tasks = None
 
     def fetch_cpu_usage():
         nonlocal cpu_usage
@@ -18,6 +18,10 @@ def write_to_database():
     def fetch_gpu_temp():
         nonlocal gpu_temp
         gpu_temp = getinfo.get_gpu_temp()
+        
+    def fetch_cpu_temp():
+        nonlocal cpu_temp
+        cpu_temp = getinfo.get_cpu_temp()
 
     def fetch_memory_usage():
         nonlocal memory_usage
@@ -34,6 +38,7 @@ def write_to_database():
     threads = [
         threading.Thread(target=fetch_cpu_usage),
         threading.Thread(target=fetch_gpu_temp),
+        threading.Thread(targt=fetch_cpu_temp),
         threading.Thread(target=fetch_memory_usage),
         threading.Thread(target=fetch_ip),
         threading.Thread(target=fetch_running_tasks)
@@ -49,6 +54,7 @@ def write_to_database():
         "timestamp": timestamp,
         "cpu_usage": cpu_usage,
         "gpu_temp": gpu_temp,
+        "cpu_temp": cpu_temp,
         "memory_usage": memory_usage,
         "ip_address": ip_address,
         "running_tasks": running_tasks

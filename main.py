@@ -1,9 +1,11 @@
-import connection
 import time
 import logwriting
 import databasewriting
 
-while True:
-    logwriting.write_log()
-    databasewriting.write_to_database()
-    time.sleep(2)
+if __name__ == "__main__":
+    print("Starting monitoring...")
+    
+    while True:
+        logwriting.write_log()
+        databasewriting.write_to_database()
+        time.sleep(3)
