@@ -7,9 +7,6 @@ def get_ip():
     hostname = socket.gethostname()
     return socket.gethostbyname(hostname)
 
-def get_cpu_usage():
-    return psutil.cpu_percent()
-
 def get_memory_usage():
     return psutil.virtual_memory().percent
 
