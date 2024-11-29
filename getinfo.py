@@ -31,11 +31,11 @@ def get_cpu_temp(url="http://localhost:8085/data.json"):
         # Find the CPU temperature sensor and get CPU temperature value
         for hardware in data['Children']:
             for sub_hardware in hardware['Children']:
-                if sub_hardware['Text'] == "Intel Core i7-9850H":
+                if sub_hardware['Text'] == "AMD Ryzen 9 6900HX":
                     for sensor in sub_hardware['Children']:
                         if sensor['Text'] == "Temperatures":
                             for temp_sensor in sensor['Children']:
-                                if temp_sensor['Text'] == "CPU Core #1":
+                                if temp_sensor['Text'] == "CPU Package":
                                     return temp_sensor['Value']
                                 
         else:
