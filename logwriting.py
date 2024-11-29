@@ -1,6 +1,7 @@
 import datetime
 import os
 import threading
+import telegram_utils
 from getinfo import get_gpu_temp, get_memory_usage, get_ip, get_running_tasks, get_cpu_temp
 
 LOG_FILE = 'log.txt'
@@ -61,3 +62,6 @@ def write_log():
     else:
         with open(LOG_FILE, 'w') as file:
             file.write(log_entry)
+            
+    # Send telegram message
+    telegram_utils.send_message(log_entry)
