@@ -3,6 +3,7 @@ import os
 import threading
 import telegram_utils
 from getinfo import get_gpu_temp, get_memory_usage, get_ip, get_running_tasks, get_cpu_temp
+import asyncio
 
 LOG_FILE = 'log.txt'
 MAX_ENTRIES = 5
@@ -64,4 +65,4 @@ def write_log():
             file.write(log_entry)
             
     # Send telegram message
-    telegram_utils.send_message(log_entry)
+    asyncio.run(telegram_utils.send_message(log_entry))

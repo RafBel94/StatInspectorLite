@@ -18,7 +18,7 @@ CHAT_ID = '6565697665'
 # print("Envía /start al bot en Telegram para obtener tu CHAT_ID.")
 # app.run_polling()
 
-def send_message(message):
+async def send_message(message):
     bot = Bot(token=BOT_TOKEN)
-    bot.sendMessage(chat_id=CHAT_ID, text=message)
+    await bot.send_message(chat_id=CHAT_ID, text=message)
     print('Message sent successfully')
