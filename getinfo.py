@@ -10,12 +10,6 @@ def get_ip():
 def get_memory_usage():
     return psutil.virtual_memory().percent
 
-def get_gpu_usage():
-    pynvml.nvmlInit()
-    handle = pynvml.nvmlDeviceGetHandleByIndex(0)
-    info = pynvml.nvmlDeviceGetUtilizationRates(handle)
-    return info.gpu
-
 def get_gpu_temp():
     pynvml.nvmlInit()
     handle = pynvml.nvmlDeviceGetHandleByIndex(0)

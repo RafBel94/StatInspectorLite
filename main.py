@@ -9,4 +9,4 @@ if __name__ == "__main__":
         if(int(str(getinfo.get_cpu_temp()).split(",")[0]) > 45):
             logwriting.write_log()
             databasewriting.write_to_database()
-        time.sleep(3)
+        time.sleep(10)
