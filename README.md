@@ -110,13 +110,5 @@ Contributions are welcome! If you wish to add new features, optimize performance
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
----
-
-## 📬 Contact
-
-If you have any questions, issues, or suggestions, feel free to contact us:
-
-- **Email:** your_email@example.com
-- **Telegram:** [@your_user](https://t.me/your_user)
 
 Thank you for using StatInspectorLite! 🎉
